@@ -1,0 +1,17 @@
+.header {
+    /* position: fixed; */
+    /* left: 0;
+    bottom: 0; */
+    width: 100%;
+    background-color: #3399ff;
+    /* min-height: 1vh; */
+    color: white;
+    text-align: center;
+    padding: 2ch 0ch;
+}
+
+.header h1 {
+    color: red;
+    font-weight: 900;
+    margin-bottom:2ch ;
+}

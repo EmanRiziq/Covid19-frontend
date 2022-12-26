@@ -1,0 +1,15 @@
+.container-1{
+    display:inline-block;
+    vertical-align:middle;
+    border: 10px;
+  
+    width: 90%;
+}
+
+.box-1{
+    background-color: rgb(203, 69, 116);
+    color: white;
+    display: inline-block ;
+    margin:4% 4%;
+    padding:1ch 3ch;    
+}
