@@ -12,7 +12,6 @@ export default function Home() {
       const URL = process.env.REACT_APP_PORT
       const data = await axios.get(`${URL}/totalRecords`)
       setTotal(data.data);
-      console.log(data.data)
     }
 
     fetchData()

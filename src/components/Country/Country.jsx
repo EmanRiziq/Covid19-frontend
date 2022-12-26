@@ -1,9 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import "./Country.css";
-// import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import CountryCard from "./CountryCard";
 import { Button, Card, ListGroup } from "react-bootstrap";
 
 export default function Country() {
@@ -19,7 +16,6 @@ export default function Country() {
             Date: record.Date,
         }
         const URL = process.env.REACT_APP_PORT
-        console.log(newRecord)
 
         axios.post(`${URL}/record`, newRecord)
             .then((data) => {
@@ -44,9 +40,10 @@ export default function Country() {
                     <h2 >Covid19 Statistics for All Countries </h2>
                     <div >
                         <div className="row h-25 mt-5">
-                            {allCountries.map((record, idx) => (
+                            {allCountries.length > 0 ? allCountries?.map((record, idx) => (
+
                                 <div key={idx} className="col-md-3 mt-3">
-                                    <Card  style={{ width: '18rem', height: '18rem' }}>
+                                    <Card style={{ width: '18rem', height: '18rem' }}>
                                         <Card.Body>
                                             <Card.Title style={{ color: 'red' }}>  Country:{" "}{record.Country}  </Card.Title>
                                             <ListGroup variant="flush">
@@ -58,34 +55,13 @@ export default function Country() {
 
                                         </Card.Body>
                                     </Card>
-
-
-
-                                    {/* 
-
-                                    <div className="">
-                                        <h2>
-                                            Country:{" "}
-                                            {record.Country}
-                                        </h2>
-                                        <ul className="">
-                                            <li>Total Confirmed Cases: {record.TotalConfirmed}</li>
-                                            <li>Total Deaths Cases: {record.TotalDeaths}</li>
-                                            <li>Total Recovered Cases: {record.TotalRecovered}</li>
-
-                                            <li>Date: {record.Date}</li>
-                                        </ul>
-                                        <div className="add-btn">
-                                            <button
-                                                id="delete-btn"
-                                                // class="btn btn-primary btn-lg  "
-                                                onClick={() => handleAddRecord(record)}
-                                            >
-                                                ADD TO MY RECORDS                                            </button>
-                                        </div>
-                                    </div> */}
                                 </div>
-                            ))}
+                            ))
+                                : <div >
+                                    <h5>
+                                        NO AVAILABLE RECORDS
+                                    </h5>
+                                </div>}
                         </div>
                     </div>
                 </div>

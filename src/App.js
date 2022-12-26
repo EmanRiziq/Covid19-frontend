@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Country from './components/Country';
+import Country from './components/Country/Country';
 import Home from './components/Home/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
-import Record from './components/Record';
+import Record from './components/Record/Record';
 import Footer from './components/Footer/Footer';
 
 function App() {

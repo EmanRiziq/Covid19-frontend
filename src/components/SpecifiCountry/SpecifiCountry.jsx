@@ -8,14 +8,10 @@ export default function SpecifiCountry() {
     const [endDate, setEndDate] = useState();
     const [country, setCountry] = useState();
     const [results, setResults] = useState([]);
-    // const navigate = useNavigate();
     const fetchData = async () => {
         const URL = process.env.REACT_APP_PORT
-        console.log(startDate.toISOString())
-        console.log(endDate)
-        console.log(country)
+   
         const data = await axios.get(`${URL}/totalCountryRecords/?from=${startDate.toISOString()}&to=${endDate.toISOString()}&country=${country}`)
-        console.log(data.data)
         setResults(data.data);
     }
     const handleSearch = (e) => {
