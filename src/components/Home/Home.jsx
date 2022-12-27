@@ -10,6 +10,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const URL = process.env.REACT_APP_PORT
+      console.log(`${URL}/totalRecords`);
       const data = await axios.get(`${URL}/totalRecords`)
       setTotal(data.data);
     }
